@@ -1,0 +1,4 @@
+const menu=document.getElementById("menu"),links=document.getElementById("links");
+menu.addEventListener("click",()=>{const open=links.style.display==="flex";links.style.display=open?"none":"flex";menu.setAttribute("aria-expanded",String(!open));});
+links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{if(window.innerWidth<=820)links.style.display="none";}));
+document.getElementById("quote").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);const msg=`Hello GK Yadav Lifting Solution,%0AName: ${encodeURIComponent(f.get("name"))}%0APhone: ${encodeURIComponent(f.get("phone"))}%0ASite Location: ${encodeURIComponent(f.get("location")||"Not specified")}%0AService: ${encodeURIComponent(f.get("service"))}%0ARequirement: ${encodeURIComponent(f.get("message")||"Not specified")}`;window.open("https://wa.me/919818703082?text="+msg,"_blank","noopener");});
